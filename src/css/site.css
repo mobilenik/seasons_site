@@ -1,0 +1,571 @@
+.menu-bar {
+  width: 100%;
+  padding: 8px 0px 8px 0px;
+  display:inline-flex;
+  background-color: #1E2D40;
+  color: white;
+  font-family: "Museo-700";
+  height:80px;
+}
+
+.menu-left {
+  width: 15%;
+  padding-left: 32px;
+  display: flex;
+  align-items: center;
+}
+
+.menu-center {
+  margin: auto;
+  text-align: center;
+  width: 70%;
+}
+
+.menu-right {
+  margin: auto;
+  padding-right: 8px;
+  width: 15%;
+  font-size:.9em;
+  text-align: center;
+  color: #FFC043; 
+}
+
+.logo {
+  width:80px;
+  padding-left: 40px;
+}
+
+.title {
+  font-size:2.5em;
+}
+
+.title-mob {
+  font-size:1.3em;
+  padding-top: 10px;
+}
+
+.title-center-l {
+  margin: auto;
+  font-size:2.2em;
+  text-align: center;
+}
+.title-center-l-sub {
+  margin: auto;
+  font-size:1.2em;
+  text-align: center;
+}
+
+.title-center-m {
+  margin: auto;
+  font-size:2em;
+  text-align: center;
+}
+.title-center-m-sub {
+  margin: auto;
+  font-size:1.3em;
+  text-align: center;
+}
+
+.title-center-s {
+  margin: auto;
+  font-size:1.2em;
+  text-align: center;
+}
+.title-center-s-sub {
+  margin: auto;
+  font-size:1em;
+  text-align: center;
+}
+
+.react-player-mob {
+  position: relative;
+  top: 0px;
+}
+
+.contact-phone{
+  font-family: "Museo-700";
+  font-size:1.8em;
+  color: #BB871E;
+}
+
+.contact-email{
+  font-family: "Museo-700";
+  font-size:.9em;
+  color: #BB871E;
+}
+
+.contact-phone-icon{
+  font-size:1.4em;
+  color: #1E2D40;
+  padding-top: 4px;
+}
+
+.banner {
+  width:100%;
+  height:128px;
+  object-fit: cover;
+  object-position: 0% 80%;
+  margin:0;
+  display: flex;
+}
+
+.parking {
+  width:100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.parking-mob {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.curriculum-img {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 8px;
+}
+
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: absolute;
+  width: 30px;
+  height: 28px;
+  left: 24px;
+  top: 32px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: white;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: grey;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #1E2D40;
+  padding-left: .25em;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #e3e4e9;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+   padding: 1em;
+}
+
+/* Individual item */
+.menu-group {
+  color:#BEA5AB;
+  display: inline-block;
+  font-family: "Museo-700";
+  margin-top: 1.5em;
+  font-size: 1.5em;
+}
+
+.menu-group-mob {
+  color:#BEA5AB;
+  display: inline-block;
+  font-family: "Museo-700";
+  margin-top: 1.5em;
+  font-size: 1.7em;
+}
+
+.menu-item {
+  color:white;
+  display: inline-block;
+  font-family: "Museo-700";
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
+.menu-item-mob {
+  color:white;
+  display: inline-block;
+  font-family: "Museo-700";
+  margin-top: 1em;
+  font-size: 1.7em;
+}
+
+.menu-item-small {
+  color:white;
+  display: inline-block;
+  font-family: "Museo-100";
+  margin-top: 1em;
+  font-size: 1em;
+}
+
+.menu-item-small-mob {
+  color:white;
+  display: inline-block;
+  font-family: "Museo-100";
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(236, 210, 210, 0.3);
+}
+
+/* YouTube */
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* GLOBAL STYLES */
+html, body {
+  margin:0;
+  padding:0;
+  background-color: #F1F1E6;
+}
+
+a {
+  text-decoration: none!important;
+  color:inherit;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+.container-cell {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.panel {
+  padding-bottom: 64px;
+  background-color: #F1F1E6;
+  text-align: justify;
+  font-family: "Museo-100";
+}
+
+.panel-header {
+  padding: 8px 32px 0px 32px;
+  font-size: 28px;
+  font-family: "Museo-700";
+}
+
+.panel-header-mob {
+  padding: 8px 8px 0px 8px;
+  font-size: 36px;
+  font-family: "Museo-700";
+}
+
+.panel-title {
+  padding: 0px 32px 0px 0px;
+  font-size: 24px;
+}
+
+.panel-title-mob {
+  padding: 8px 8px 0px 8px;
+  font-size: 24px;
+}
+
+
+.panel-body {
+  padding: 8px 32px 0px 32px;
+  font-family: "Museo-100";
+  font-size:18px;
+}
+
+.panel-body-mob{
+  padding: 8px 8px 0px 8px;
+  font-family: "Museo-100";
+  font-size:20px;
+}
+
+.label {
+  font-size:.75em;
+}
+
+.img-fullwidth {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.img-square {
+  padding-left:16;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+}
+
+td.contact {
+  padding: 8px 40px 0px 32px;
+  vertical-align: top;
+}
+
+td.contact-mobile {
+  padding: 8px 16px 0px 8px;
+  vertical-align: top;
+}
+
+td.curriculum {
+  padding: 8px 32px 8px 0px;
+  vertical-align: top;
+}
+
+td.image {
+  padding: 8px 16px 8px 32px;
+  vertical-align: top;
+}
+
+td.image>img {
+  border-radius: 8px;
+}
+
+td.parking-image {
+  padding-right: 32px;
+  width: 40%;
+  vertical-align: top;
+}
+
+td.parking-text {
+  vertical-align: top;
+}
+
+table.video-box {
+  width: 100%;
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.video-caption {
+  text-align: center;
+  vertical-align: top;
+  font-family: "Museo-700";
+}
+
+.video-subtitle {
+  text-align: center;
+  vertical-align: top;
+  font-family: "Museo-100";
+}
+
+td.video-player {
+  padding-left: 0px;
+}
+
+td.video-player-mob {
+  padding-bottom: 16px;
+  text-align: center;
+  font-size: .8em;
+}
+
+.callout {
+  background-color: #4C5A70;
+  padding: 16px;
+  color: white;
+  border-spacing: 32px;
+  border-radius: 8px;
+}
+
+.align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.font-bold {
+  font-family: "Museo-700";
+}
+
+.font-light {
+  font-family: "Museo-100";
+}
+
+.font-medium{
+  font-size: 0.8em;
+}
+
+.font-small{
+  font-size: 0.7em;
+}
+
+/* FORMS */
+.form {
+  background-color: #B7C6DF;
+  padding: 16px;
+  color:black;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.form-mobile {
+  background-color: #B7C6DF;
+  padding: 8px;
+  color:black;
+  text-align: left;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+label {
+  padding-bottom: 4px;
+  margin-top: 16px;
+}
+
+.field {
+  width:100%;
+  font-family: "Museo-100";
+  font-size: inherit;
+}
+
+.button {
+  float: right;
+  margin-right: -6px;
+  margin-top: 8px;
+  font-family: "Museo-700";
+  background-color: #BB871E;
+  color:black;
+  border: 0;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+textarea {
+  width: 100%;
+  height: 125px;
+  font-family: "Museo-100";
+}
+
+.terms {
+  position: fixed;
+  top:0px;
+  left: 5000px;
+}
+/* FONTS */
+@font-face {
+  font-family: "Museo-700";
+  src: url('../fonts/Museo/Museo 700.otf') format('opentype');
+}
+
+@font-face {
+  font-family: "Museo-100";
+  src: url('../fonts/Museo/Museo 100.otf') format('opentype');
+}
+
+.col1 {
+  background-color: #1E2D40;
+}
+
+.col1a {
+  background-color: #A2ACBD;
+}
+
+.col2 {
+  background-color: #3F242C;
+}
+
+.col2a {
+  background-color: #BEA5AB;
+}
+
+/*https://mycolor.space/?hex=%231E2D40&sub=1*/
+
+/* MODALS */
+.modal {
+  position: absolute;
+  z-index: 1;
+  top:0px;
+  left:0px;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 200px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal-content {
+  background-color: #B7C6DF;
+  width: 30%;
+  padding: 16px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  text-align: justify;
+  border: 2px solid black;
+}
+
+.modal-content-mob {
+  background-color: #B7C6DF;
+  width: 70%;
+  padding: 16px 16px 16px 16px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  text-align: justify;
+  border: 2px solid black;
+}
+
+.close {
+  color: Black;
+  float: right;
+}
+
+.close:hover {
+  color: cyan;
+  cursor: pointer;
+}
+
+.react-images__footer__count {
+  font-size: 12px;
+  font-family: "Museo-100";
+}
+
+.react-images__header_button--fullscreen {
+  width: 0!important;
+}
