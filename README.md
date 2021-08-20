@@ -1,1 +1,1 @@
-#Seasons Art Class Site
+# Seasons Art Class Site
