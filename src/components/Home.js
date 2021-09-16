@@ -65,10 +65,6 @@ class Home extends React.Component {
             <div className="panel">
                 <MediaQuery maxWidth={600}>
                     <div className={"panel-body-mob"}>
-                        <div className="callout"><div className="font-bold">Our Autumn class starts on Tuesday September 14th but places are going fast!</div><br />
-                            <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br/>
-                            <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
-                        </div>
                         <br />
                         <Text1 />
                         <br />
@@ -96,10 +92,11 @@ class Home extends React.Component {
                         <table className="layout"><tbody>
                             <tr>
                                 <td><Text1 /></td>
-                                <td width="32px"></td>
+                                {/*<td width="32px"></td>
                                 <td width="250px" className="callout"><div className="font-bold">Our Autumn class starts on Tuesday September 14th but places are going fast!</div><br />
                                     <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
-                                    <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div></td>
+                                    <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
+    </td>*/}
                             </tr>
                         </tbody></table>
                         <br />
