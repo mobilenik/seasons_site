@@ -5,7 +5,6 @@ import Pic1 from '../img/exsum21/ExSum21 - 1.jpeg'
 import Pic2 from '../img/exsum21/ExSum21 - 2.jpeg'
 import Pic3 from '../img/exsum21/ExSum21 - 3.jpeg'
 import Pic4 from '../img/exsum21/ExSum21 - 4.jpeg'
-import Gallery from "react-photo-gallery";
 
 var listOfImages = [];
 var hallPicsBig = [{src:Pic1,height:3, width: 4},{src:Pic2,height:3, width: 4},{src:Pic3,height:3, width: 4},{src:Pic4,height:3, width: 4}]

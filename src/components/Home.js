@@ -8,6 +8,8 @@ import Gallery1 from '../img/Gallery1.jpg'
 import Gallery2 from '../img/Gallery2.jpg'
 import Gallery3 from '../img/Gallery3.jpg'
 
+import ExhibitionAd from '../img/exhibition_ad.png'
+
 class Text1 extends React.Component {
     render() {
         return (
@@ -91,16 +93,21 @@ class Home extends React.Component {
                         <br />
                         <table className="layout"><tbody>
                             <tr>
-                                <td><Text1 /></td>
-                                {/*<td width="32px"></td>
-                                <td width="250px" className="callout"><div className="font-bold">Our Autumn class starts on Tuesday September 14th but places are going fast!</div><br />
+                                <td><img alt='exhibition ad' src={ExhibitionAd} height='256' /></td>
+                                <td width="32px"></td>
+                                <td><Text1 />
+                                    <br />
+                                    Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.
+                                </td>
+                                <td width="32px"></td>
+                                <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 18th but places are going fast!</div><br />
                                     <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
                                     <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
-    </td>*/}
+                                </td>
                             </tr>
                         </tbody></table>
                         <br />
-                        <table className="video-box align-center">
+                        <table className="video-box align-center"><tbody>
                             <tr>
                                 <td >
                                     <p className="video-caption">Don't take our word for it - listen to what our students think...</p>
@@ -111,7 +118,7 @@ class Home extends React.Component {
                                     <ReactPlayer className='react-player fixed-bottom align-right' url={process.env.PUBLIC_URL + '/video/Review1.mp4'} width='80%' height='80%' controls={true} />
                                 </td>
                             </tr>
-                        </table>
+                        </tbody></table>
                     </div>
                 </MediaQuery>
                 <MediaQuery maxWidth={6}>
