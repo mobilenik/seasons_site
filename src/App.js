@@ -9,6 +9,7 @@ import Curriculum from './components/Curriculum.js'
 import Privacy from './components/Privacy.js'
 import Home from './components/Home.js'
 import ExSum21 from './components/ExSum21'
+import ExAut21 from './components/ExAut21'
 import MediaQuery from 'react-responsive'
 import { HiOutlineMail, HiPhone } from 'react-icons/hi'
 import { IoLogoFacebook } from 'react-icons/io'
@@ -25,7 +26,9 @@ function App() {
             <div id="course" className="menu-group">Course</div>
             <a id="curriculum" className="menu-item-small" href="/curriculum">Curriculum</a>
             <a id="location" className="menu-item-small" href="/location">Location</a>
-            <a id="exhibition" className="menu-item-small" href="/exhibition">Exhibition</a>
+            <div id="exhibition" className="menu-group">Exhibitions</div>
+            <a id="sum21" className="menu-item-small" href="/exsum21">Summer 2021</a>
+            <a id="aut21" className="menu-item-small" href="/exaut21">Autumn 2021</a>
             <div id="info" className="menu-group">Extra Info</div>
             <a id="contact" className="menu-item-small" href="/contact">Contact Us</a>
             <a id="privacy" className="menu-item-small" href="/privacy">Privacy Statement</a>
@@ -84,7 +87,8 @@ function App() {
         <Route path="/contact" component={Contact} />
         <Route path="/privacy" component={Privacy} />
         <Route path="/location" component={Location} />
-        <Route path="/exhibition" component={ExSum21} />
+        <Route path="/exsum21" component={ExSum21} />
+        <Route path="/exaut21" component={ExAut21} />
 
       </Router>
     </div>

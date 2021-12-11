@@ -93,11 +93,11 @@ class Home extends React.Component {
                         <br />
                         <table className="layout"><tbody>
                             <tr>
-                                <td><img alt='exhibition ad' src={ExhibitionAd} height='256' /></td>
-                                <td width="32px"></td>
+                                {/*<td><img alt='exhibition ad' src={ExhibitionAd} height='256' /></td>
+                                <td width="32px"></td>*/}
                                 <td><Text1 />
-                                    <br />
-                                    Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.
+                                    {/*<br />
+                                    Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.*/}
                                 </td>
                                 <td width="32px"></td>
                                 <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 18th but places are going fast!</div><br />
