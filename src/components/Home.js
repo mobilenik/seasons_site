@@ -8,7 +8,7 @@ import Gallery1 from '../img/Gallery1.jpg'
 import Gallery2 from '../img/Gallery2.jpg'
 import Gallery3 from '../img/Gallery3.jpg'
 
-import ExhibitionAd from '../img/exhibition_ad.png'
+//import ExhibitionAd from '../img/exhibition_ad.png'
 
 class Text1 extends React.Component {
     render() {

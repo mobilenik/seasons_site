@@ -40,7 +40,9 @@ function App() {
             <div id="course" className="menu-group-mob">Course</div>
             <a id="curriculum" className="menu-item-small-mob" href="/curriculum">Curriculum</a>
             <a id="location" className="menu-item-small-mob" href="/location">Location</a>
-            <a id="exhibition" className="menu-item-small-mob" href="/exhibition">Exhibition</a>
+            <div id="exhibition" className="menu-group-mob">Exhibitions</div>
+            <a id="sum21" className="menu-item-small-mob" href="/exsum21">Summer 21</a>
+            <a id="aut21" className="menu-item-small-mob" href="/exaut21">Autumn 21</a>
             <div id="info" className="menu-group-mob">Extra Info</div>
             <a id="contact" className="menu-item-small-mob" href="/contact">Contact Us</a>
             <a id="privacy" className="menu-item-small-mob" href="/privacy">Privacy Statement</a>
