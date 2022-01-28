@@ -10,6 +10,7 @@ import Privacy from './components/Privacy.js'
 import Home from './components/Home.js'
 import ExSum21 from './components/ExSum21'
 import ExAut21 from './components/ExAut21'
+import Booking from './components/Booking'
 import MediaQuery from 'react-responsive'
 import { HiOutlineMail, HiPhone } from 'react-icons/hi'
 import { IoLogoFacebook } from 'react-icons/io'
@@ -91,6 +92,7 @@ function App() {
         <Route path="/location" component={Location} />
         <Route path="/exsum21" component={ExSum21} />
         <Route path="/exaut21" component={ExAut21} />
+        <Route path="/booking" component={Booking} />
 
       </Router>
     </div>

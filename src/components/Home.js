@@ -7,6 +7,7 @@ import { Carousel } from 'react-carousel-minimal'
 import Gallery1 from '../img/Gallery1.jpg'
 import Gallery2 from '../img/Gallery2.jpg'
 import Gallery3 from '../img/Gallery3.jpg'
+import ExhibitionAd from '../img/exhibition_ad.png'
 
 //import ExhibitionAd from '../img/exhibition_ad.png'
 
@@ -28,6 +29,33 @@ class Text2 extends React.Component {
             <div>
                 <p>Why not take a look at the students artwork from our most recent <u><a href="/exhibition" alt="Exhibition">exhibition</a></u> as well to see the kinds of things we work on.</p>
             </div>
+        );
+    }
+}
+
+class Spacer extends React.Component {
+    render() {
+        return (
+            <td width="32px"></td>
+        );
+    }
+}
+
+class NewClassCallout extends React.Component {
+    render() {
+        return (
+            <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 18th but places are going fast!</div><br />
+                <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
+                <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
+            </td>
+        );
+    }
+}
+
+class ExhibitionCallout extends React.Component {
+    render() {
+        return (
+            <td><img alt='exhibition ad' src={ExhibitionAd} height='256' /></td>
         );
     }
 }
@@ -91,21 +119,20 @@ class Home extends React.Component {
                 <MediaQuery minWidth={601}>
                     <div className={"panel-body"}>
                         <br />
-                        <table className="layout"><tbody>
-                            <tr>
-                                {/*<td><img alt='exhibition ad' src={ExhibitionAd} height='256' /></td>
-                                <td width="32px"></td>*/}
-                                <td><Text1 />
-                                    {/*<br />
+                        <table className="layout">
+                            <tbody>
+                                <tr>
+                                    {/*<ExhibitionCallout />
+                                    <Spacer />*/}
+                                    <td><Text1 />
+                                        {/*<br />
                                     Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.*/}
-                                </td>
-                                <td width="32px"></td>
-                                <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 18th but places are going fast!</div><br />
-                                    <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
-                                    <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
-                                </td>
-                            </tr>
-                        </tbody></table>
+                                    </td>
+                                    {/*<Spacer />
+                                    <NewClassCallout />*/}
+                                </tr>
+                            </tbody>
+                        </table>
                         <br />
                         <table className="video-box align-center"><tbody>
                             <tr>
@@ -186,7 +213,7 @@ class Home extends React.Component {
 
 
 
-            </div>
+            </div >
         </div >
     }
 }
