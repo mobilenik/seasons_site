@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com';
 class ContactForm extends React.Component {
 
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       name: "",
       email: "",
@@ -13,11 +13,7 @@ class ContactForm extends React.Component {
       message: "",
       terms: false,
       seen: false
-    };
-
-    //handleInputChange = this.handleInputChange.bind(this);
-    //this.handleSubmit = this.handleSubmit.bind(this);
-    //this.togglePop = this.togglePop.bind(this);
+    }
 
   }
 
@@ -25,20 +21,20 @@ class ContactForm extends React.Component {
   togglePop = () => {
     this.setState({
       seen: !this.state.seen
-    });
-  };
+    })
+  }
 
   handleInputChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
-    });
+    })
   }
 
   handleSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     if (this.state.terms === false && this.state.name !== '' & this.state.phone !== '') {
       console.log("sending " + this.state.name);
-      emailjs.send("default_service","template_enquiry",this.state,"user_ZokhdEj86cd48cEMWWePd");
+      emailjs.send("default_service", "template_enquiry", this.state, "user_ZokhdEj86cd48cEMWWePd");
 
       this.setState({
         name: "",
@@ -56,11 +52,11 @@ class ContactForm extends React.Component {
 
 
   render() {
-    return (<div className={"panel-body"}>
+    return (<div className="panel-body">
       <form className="form">
         <table>
           <tbody><tr>
-            <td className="contact">
+            <td className="column">
               <label>Name (*)</label>
               <input name="name" type="text" value={this.state.name} onChange={this.handleInputChange} width="100%" className="field" required />
               <br />
@@ -73,7 +69,7 @@ class ContactForm extends React.Component {
               <input name="email" type="email" value={this.state.email} onChange={this.handleInputChange} className="field" />
               <br />
             </td>
-            <td className="contact">
+            <td className="column">
               <label>Message</label>
               <textarea name="message" value={this.state.message} onChange={this.handleInputChange} className="field" />
               <br />
@@ -90,7 +86,7 @@ class ContactForm extends React.Component {
 
       </form>
     </div>
-    );
+    )
   }
 }
 

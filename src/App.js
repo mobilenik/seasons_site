@@ -11,6 +11,7 @@ import Home from './components/Home.js'
 import ExSum21 from './components/ExSum21'
 import ExAut21 from './components/ExAut21'
 import Booking from './components/Booking'
+import ExSpr22 from './components/ExSpr22'
 import MediaQuery from 'react-responsive'
 import { HiOutlineMail, HiPhone } from 'react-icons/hi'
 import { IoLogoFacebook } from 'react-icons/io'
@@ -30,6 +31,7 @@ function App() {
             <div id="exhibition" className="menu-group">Exhibitions</div>
             <a id="sum21" className="menu-item-small" href="/exsum21">Summer 2021</a>
             <a id="aut21" className="menu-item-small" href="/exaut21">Autumn 2021</a>
+            <a id="spr22" className="menu-item-small" href="/exspr22">Spring 2022</a>
             <div id="info" className="menu-group">Extra Info</div>
             <a id="contact" className="menu-item-small" href="/contact">Contact Us</a>
             <a id="privacy" className="menu-item-small" href="/privacy">Privacy Statement</a>
@@ -44,6 +46,7 @@ function App() {
             <div id="exhibition" className="menu-group-mob">Exhibitions</div>
             <a id="sum21" className="menu-item-small-mob" href="/exsum21">Summer 21</a>
             <a id="aut21" className="menu-item-small-mob" href="/exaut21">Autumn 21</a>
+            <a id="spr22" className="menu-item-small-mob" href="/exspr22">Spring 22</a>
             <div id="info" className="menu-group-mob">Extra Info</div>
             <a id="contact" className="menu-item-small-mob" href="/contact">Contact Us</a>
             <a id="privacy" className="menu-item-small-mob" href="/privacy">Privacy Statement</a>
@@ -92,6 +95,7 @@ function App() {
         <Route path="/location" component={Location} />
         <Route path="/exsum21" component={ExSum21} />
         <Route path="/exaut21" component={ExAut21} />
+        <Route path="/exspr22" component={ExSpr22} />
         <Route path="/booking" component={Booking} />
 
       </Router>

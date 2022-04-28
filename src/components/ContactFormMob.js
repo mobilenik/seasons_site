@@ -53,7 +53,7 @@ class ContactForm extends React.Component {
         <form className="form-mobile" onSubmit={this.handleSubmit}>
           <table><tbody>
             <tr>
-              <td className="contact-mobile">
+              <td className="column-mobile">
                 <label>Name (*)</label>
                 <input name="name" type="text" value={this.state.value} onChange={this.handleInputChange} width="100%" className="field" required />
                 <br />

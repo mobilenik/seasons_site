@@ -44,7 +44,7 @@ class Spacer extends React.Component {
 class NewClassCallout extends React.Component {
     render() {
         return (
-            <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 18th but places are going fast!</div><br />
+            <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday May 10th but places are going fast!</div><br />
                 <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
                 <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
             </td>
@@ -128,8 +128,8 @@ class Home extends React.Component {
                                         {/*<br />
                                     Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.*/}
                                     </td>
-                                    {/*<Spacer />
-                                    <NewClassCallout />*/}
+                                    <Spacer />
+                                    <NewClassCallout />
                                 </tr>
                             </tbody>
                         </table>

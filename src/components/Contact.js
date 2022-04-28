@@ -2,7 +2,7 @@ import React from 'react';
 import ContactForm from './ContactForm.js';
 import ContactFormMob from './ContactFormMob.js';
 import { HiOutlineMail, HiPhone } from 'react-icons/hi'
-import {IoLogoFacebook} from 'react-icons/io'
+import { IoLogoFacebook } from 'react-icons/io'
 import MediaQuery from 'react-responsive'
 
 class Text1 extends React.Component {
@@ -30,14 +30,14 @@ class Contact extends React.Component {
         return <div>
             <div className="panel">
                 <MediaQuery maxWidth={600}>
-                <div className="panel-header-mob">Contact Us</div>
-                    <div className={"panel-body-mob"}>
+                    <div className="panel-header-mob">Contact Us</div>
+                    <div className="panel-body-mob">
                         <Text1 />
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={601}>
-                <div className="panel-header">Contact Us</div>
-                    <div className={"panel-body"}>
+                    <div className="panel-header">Contact Us</div>
+                    <div className="panel-body">
                         <Text1 />
                     </div>
                 </MediaQuery>
@@ -52,12 +52,12 @@ class Contact extends React.Component {
                 </MediaQuery>
 
                 <MediaQuery maxWidth={600}>
-                    <div className={"panel-body-mob"}>
+                    <div className="panel-body-mob">
                         <Text2 />
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={601}>
-                    <div className={"panel-body"}>
+                    <div className="panel-body">
                         <Text2 />
                     </div>
                 </MediaQuery>

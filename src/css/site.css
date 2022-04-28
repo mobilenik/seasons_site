@@ -334,12 +334,12 @@ table {
   width: 100%;
 }
 
-td.contact {
+td.column {
   padding: 8px 40px 0px 32px;
   vertical-align: top;
 }
 
-td.contact-mobile {
+td.column-mobile {
   padding: 8px 16px 0px 8px;
   vertical-align: top;
 }
@@ -484,6 +484,13 @@ textarea {
   top:0px;
   left: 5000px;
 }
+
+
+.bankdetails{
+  width: 1%;
+  white-space: nowrap;
+}
+
 /* FONTS */
 @font-face {
   font-family: "Museo-700";
