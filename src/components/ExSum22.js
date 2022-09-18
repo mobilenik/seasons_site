@@ -1,20 +1,19 @@
 import React from 'react';
 import MediaQuery from 'react-responsive'
 import Lightbox from './Lightbox';
-import Pic1 from '../img/exspr22/ExSpr22 - 1.jpeg'
-import Pic2 from '../img/exspr22/ExSpr22 - 2.jpeg'
-import Pic3 from '../img/exspr22/ExSpr22 - 3.jpeg'
-import Pic4 from '../img/exspr22/ExSpr22 - 4.jpeg'
+import Pic1 from '../img/exsum22/ExSum22 - 1.jpeg'
+import Pic2 from '../img/exsum22/ExSum22 - 2.jpeg'
+import Pic3 from '../img/exsum22/ExSum22 - 3.jpeg'
 
 var listOfImages = [];
-var hallPicsBig = [{ src: Pic1, height: 3, width: 4 }, { src: Pic2, height: 3, width: 4 }, { src: Pic3, height: 3, width: 4 }, { src: Pic4, height: 3, width: 4 }]
-var hallPicsSmall = [{ src: Pic1, height: 3, width: 4 }, { src: Pic2, height: 3, width: 4 }, { src: Pic3, height: 3, width: 4 }, { src: Pic4, height: 3, width: 4 }]
+var hallPicsBig = [{ src: Pic1, height: 3, width: 4 }, { src: Pic2, height: 3, width: 4 }, { src: Pic3, height: 3, width: 4 }]
+var hallPicsSmall = [{ src: Pic1, height: 3, width: 4 }, { src: Pic2, height: 3, width: 4 }, { src: Pic3, height: 3, width: 4 }]
 
 class Text1 extends React.Component {
     render() {
         return (
             <div>
-                <p>The exhibition for our Spring 2022 course showed of the students successes with drawing, pastels, watercolours and acrylics.</p>
+                <p>The exhibition for our Summer 2022 course showed of the students successes with drawing, pastels, watercolours and acrylics.</p>
                 <div className="container label align-center">You can click on the pictures to see them better and then swipe left and right to swap pictures.</div>
 
             </div>
@@ -22,7 +21,7 @@ class Text1 extends React.Component {
     }
 }
 
-class ExSum21 extends React.Component {
+class ExSum22 extends React.Component {
 
 
     importAll(r) {
@@ -74,4 +73,4 @@ class ExSum21 extends React.Component {
     }
 }
 
-export default ExSum21;
+export default ExSum22;

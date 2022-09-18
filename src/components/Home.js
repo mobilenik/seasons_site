@@ -128,8 +128,8 @@ class Home extends React.Component {
                                         {/*<br />
                                     Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.*/}
                                     </td>
-                                    <Spacer />
-                                    <NewClassCallout />
+                                    {/*<Spacer />
+                                    <NewClassCallout />*/}
                                 </tr>
                             </tbody>
                         </table>
