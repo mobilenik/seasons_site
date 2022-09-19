@@ -30,7 +30,7 @@ class ExSum22 extends React.Component {
 
     componentDidMount() {
 
-        const imgMap = this.importAll(require.context("../img/exspr22", false, /\.(png|jpe?g|svg)$/));
+        const imgMap = this.importAll(require.context("../img/exsum22", false, /\.(png|jpe?g|svg)$/));
 
         for (const [key, value] of imgMap.entries()) {
             if (value.default.includes("[")) {
@@ -52,7 +52,7 @@ class ExSum22 extends React.Component {
             <MediaQuery maxWidth={600}>
                 <div className="panel-header-mob">Exhibition</div>
                 <div className={"panel-body-mob"}>
-                    <div className="panel-title">Spring 2022</div>
+                    <div className="panel-title">Summer 2022</div>
                     <Text1 />
                     <Lightbox photos={hallPicsSmall} />
                     <Lightbox photos={listOfImages} />

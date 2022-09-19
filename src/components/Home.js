@@ -27,7 +27,7 @@ class Text2 extends React.Component {
     render() {
         return (
             <div>
-                <p>Why not take a look at the students artwork from our most recent <u><a href="/exhibition" alt="Exhibition">exhibition</a></u> as well to see the kinds of things we work on.</p>
+                <p>Why not take a look at the students artwork from our most recent <u><a href="/exsum22" alt="Exhibition">exhibition</a></u> as well to see the kinds of things we work on.</p>
             </div>
         );
     }
