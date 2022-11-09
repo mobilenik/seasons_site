@@ -15,7 +15,7 @@ class Text1 extends React.Component {
         return (
             <div>
                 <p>The exhibition for our Spring 2022 course showed of the students successes with drawing, pastels, watercolours and acrylics.</p>
-                <div className="container label align-center">You can click on the pictures to see them better and then swipe left and right to swap pictures.</div>
+                <div className="container label align-center">You can click on the pictures to see them better</div>
 
             </div>
         );

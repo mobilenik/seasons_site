@@ -15,7 +15,7 @@ class Text1 extends React.Component {
         return (
             <div>
                 <p>Our first exhibition was a great success with the students bringing friends and family to see their masterpieces.</p>
-                <div className="container label align-center">You can click on the pictures to see them better and then swipe left and right to swap pictures.</div>
+                <div className="container label align-center">You can click on the pictures to see them better</div>
 
             </div>
         );

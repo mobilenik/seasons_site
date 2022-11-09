@@ -1,24 +1,47 @@
 import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Modal from 'react-modal';
+import MediaQuery from 'react-responsive'
 
 function Lightbox(pics) {
   const [currentImage, setCurrentImage] = useState();
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
+  const [isPortrait, setIsPortrait] = useState(true);
 
-  const customStyles = {
+  const customStylesBig = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+      top: '50px',
+      left: '50px',
+      right: '50px',
+      bottom: '50px',
+      backgroundColor: 'black',
+      padding: '20px'
     },
+  };
+
+  const customStylesSmall = {
+    content: {
+      top: '20px',
+      left: '20px',
+      right: '20px',
+      bottom: '20px',
+      backgroundColor: 'black',
+      padding: '10px'
+    },
+  };
+
+  const smallImgStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%'
   };
 
   const openLightbox = useCallback((event, { photo, index }) => {
     setCurrentImage(photo.src);
+    setIsPortrait(photo.height > photo.width ? true : false)
+    //console.log(photo.height > photo.width ? true : false)
+    //console.log('H:%s, W:%s', photo.height, photo.width)
     setViewerIsOpen(true);
   }, []);
 
@@ -29,10 +52,38 @@ function Lightbox(pics) {
 
   return (
     <div>
-      <Gallery photos={pics.photos} onClick={openLightbox} />
-      <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStyles}>
-        <div valign='middle' align='center'><img src={currentImage} height='100%' /></div>
-      </Modal>
+      <Gallery photos={pics.photos} onClick={openLightbox} targetRowHeight={80} />
+      <MediaQuery minWidth={601} orientation='portrait'>
+        <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStylesBig} ariaHideApp={false}>
+          <div style={smallImgStyle}>
+            <img src={currentImage} width='100%' alt='artwork' />
+          </div>
+        </Modal>
+      </MediaQuery>
+      <MediaQuery minWidth={601} orientation='landscape'>
+        <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStylesBig} ariaHideApp={false}>
+          <div style={smallImgStyle}>
+            <img src={currentImage} height='100%' alt='artwork' />
+          </div>
+        </Modal>
+      </MediaQuery>
+
+      <MediaQuery maxWidth={600} orientation='portrait'>
+        <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStylesSmall} ariaHideApp={false}>
+          <div style={smallImgStyle}>
+            {isPortrait && <img src={currentImage} width='100%' alt='artwork' />}
+            {isPortrait === false && <img src={currentImage} width='100%' alt='artwork' />}
+          </div>
+        </Modal>
+      </MediaQuery>
+      <MediaQuery maxWidth={600} orientation='landscape'>
+        <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStylesSmall} ariaHideApp={false}>
+          <div style={smallImgStyle}>
+            {isPortrait && <img src={currentImage} height='100%' alt='artwork' />}
+            {isPortrait === false && <img src={currentImage} height='100%' alt='artwork' />}
+          </div>
+        </Modal>
+      </MediaQuery>
     </div >
   )
 }
