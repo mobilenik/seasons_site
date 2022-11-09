@@ -1,3 +1,4 @@
+import React from "react";
 import './css/site.css'
 //import './css/App.css'
 import { slide as Menu } from 'react-burger-menu'

@@ -1,13 +1,24 @@
 import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
-import Carousel, { Modal, ModalGateway } from "react-images";
+import Modal from 'react-modal';
 
 function Lightbox(pics) {
-  const [currentImage, setCurrentImage] = useState(0);
+  const [currentImage, setCurrentImage] = useState();
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
   const openLightbox = useCallback((event, { photo, index }) => {
-    setCurrentImage(index);
+    setCurrentImage(photo.src);
     setViewerIsOpen(true);
   }, []);
 
@@ -19,22 +30,11 @@ function Lightbox(pics) {
   return (
     <div>
       <Gallery photos={pics.photos} onClick={openLightbox} />
-      <ModalGateway>
-        {viewerIsOpen ? (
-          <Modal onClose={closeLightbox}>
-            <Carousel
-              currentIndex={currentImage}
-              views={pics.photos.map(x => ({
-                ...x,
-                srcset: x.srcSet,
-                caption: x.title
-              }))}
-            />
-          </Modal>
-        ) : null}
-      </ModalGateway>
-    </div>
-  );
+      <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStyles}>
+        <div valign='middle' align='center'><img src={currentImage} height='100%' /></div>
+      </Modal>
+    </div >
+  )
 }
 
 export default Lightbox;

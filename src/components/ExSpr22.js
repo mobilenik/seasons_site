@@ -22,7 +22,7 @@ class Text1 extends React.Component {
     }
 }
 
-class ExSum21 extends React.Component {
+class ExSpr22 extends React.Component {
 
 
     importAll(r) {
@@ -32,17 +32,17 @@ class ExSum21 extends React.Component {
     componentDidMount() {
 
         const imgMap = this.importAll(require.context("../img/exspr22", false, /\.(png|jpe?g|svg)$/));
-
+        console.log(imgMap.length)
         for (const [key, value] of imgMap.entries()) {
-            if (value.default.includes("[")) {
-                var size = value.default.substring(value.default.lastIndexOf("[") + 1, value.default.lastIndexOf(["]"]));
+            if (value.includes("[")) {
+                var size = value.substring(value.lastIndexOf("[") + 1, value.lastIndexOf(["]"]));
                 var sizeParts = size.split("x");
                 if (isNaN(sizeParts[0]) || isNaN(sizeParts[1])) {
                     console.log(key);
                     console.log(sizeParts[0] + ":" + sizeParts[1]);
-                    console.log(value.default);
+                    console.log(value);
                 } else {
-                    listOfImages.push({ "src": value.default, width: sizeParts[0], height: sizeParts[1] })
+                    listOfImages.push({ "src": value, width: sizeParts[0], height: sizeParts[1] })
                 }
             }
         }
@@ -74,4 +74,4 @@ class ExSum21 extends React.Component {
     }
 }
 
-export default ExSum21;
+export default ExSpr22;

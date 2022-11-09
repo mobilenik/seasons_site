@@ -33,15 +33,15 @@ class ExSum22 extends React.Component {
         const imgMap = this.importAll(require.context("../img/exsum22", false, /\.(png|jpe?g|svg)$/));
 
         for (const [key, value] of imgMap.entries()) {
-            if (value.default.includes("[")) {
-                var size = value.default.substring(value.default.lastIndexOf("[") + 1, value.default.lastIndexOf(["]"]));
+            if (value.includes("[")) {
+                var size = value.substring(value.lastIndexOf("[") + 1, value.lastIndexOf(["]"]));
                 var sizeParts = size.split("x");
                 if (isNaN(sizeParts[0]) || isNaN(sizeParts[1])) {
                     console.log(key);
                     console.log(sizeParts[0] + ":" + sizeParts[1]);
-                    console.log(value.default);
+                    console.log(value);
                 } else {
-                    listOfImages.push({ "src": value.default, width: sizeParts[0], height: sizeParts[1] })
+                    listOfImages.push({ "src": value, width: sizeParts[0], height: sizeParts[1] })
                 }
             }
         }
@@ -56,16 +56,14 @@ class ExSum22 extends React.Component {
                     <Text1 />
                     <Lightbox photos={hallPicsSmall} />
                     <Lightbox photos={listOfImages} />
-
                 </div>
             </MediaQuery>
             <MediaQuery minWidth={601}>
-                <div className="panel-header">Spring 2022 Exhibition</div>
+                <div className="panel-header">Summer 2022 Exhibition</div>
                 <div className="panel-body">
                     <Text1 />
                     <Lightbox photos={hallPicsBig} />
                     <Lightbox photos={listOfImages} />
-
                 </div>
             </MediaQuery>
 

@@ -112,8 +112,6 @@ class Home extends React.Component {
                                 </td>
                             </tr>
                         </table>
-                        <Text2 />
-
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={601}>
@@ -139,7 +137,6 @@ class Home extends React.Component {
                                 <td >
                                     <p className="video-caption">Don't take our word for it - listen to what our students think...</p>
                                     <p className="video-subtitle">You can skip to 2 minutes and 50 seconds for the 'serious' review!</p>
-                                    <p className="video-subtitle">You can also take a look at the students artwork from our most recent <u><a href="/exhibition" alt="Exhibition">exhibition</a></u> to see the kinds of things we work on.</p>
                                 </td>
                                 <td className="video-player">
                                     <ReactPlayer className='react-player fixed-bottom align-right' url={process.env.PUBLIC_URL + '/video/Review1.mp4'} width='80%' height='80%' controls={true} />
@@ -148,7 +145,7 @@ class Home extends React.Component {
                         </tbody></table>
                     </div>
                 </MediaQuery>
-                <MediaQuery maxWidth={6}>
+                <MediaQuery maxWidth={600}>
                     <div className="panel-body-mob">
                         <Text2 />
                         <Carousel
@@ -179,7 +176,7 @@ class Home extends React.Component {
                         />
                     </div>
                 </MediaQuery>
-                <MediaQuery minWidth={60001}>
+                <MediaQuery minWidth={601}>
                     <div className="panel-body">
                         <Text2 />
                         <Carousel

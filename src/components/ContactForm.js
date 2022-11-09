@@ -1,5 +1,5 @@
 import React from 'react';
-import PopUp from "./Popup";
+import EnquiryPopup from "./Popup";
 import emailjs from 'emailjs-com';
 
 class ContactForm extends React.Component {
@@ -82,7 +82,7 @@ class ContactForm extends React.Component {
             </td></tr>
           </tbody>
         </table>
-        {this.state.seen ? <PopUp toggle={this.togglePop} /> : null}
+        {this.state.seen ? <EnquiryPopup toggle={this.togglePop} msg="Thank you for your enquiry - we will contact you shortly." /> : null}
 
       </form>
     </div>
