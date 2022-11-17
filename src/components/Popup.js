@@ -13,12 +13,16 @@ export default class Popup extends Component {
                 <MediaQuery maxWidth={600}>
                     <div className="modal-content-mob container">
                         <div className="close container-cell" onClick={this.handleClick}>&times;</div>
+                        <br />
+                        <br />
                         <div className="container-cell">{this.props.msg}</div>
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={601}>
                     <div className="modal-content container">
                         <div className="close container-cell" onClick={this.handleClick}>&times;</div>
+                        <br />
+                        <br />
                         <div className="container-cell">{this.props.msg}</div>
 
                     </div>

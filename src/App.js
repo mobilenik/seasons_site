@@ -1,6 +1,5 @@
 import React from "react";
 import './css/site.css'
-//import './css/App.css'
 import { slide as Menu } from 'react-burger-menu'
 import logo from './img/logo_wo.webp'
 import { BrowserRouter as Router, Route } from "react-router-dom";

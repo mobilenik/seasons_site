@@ -56,7 +56,6 @@ class ExSum21 extends React.Component {
                     <Text1 />
                     <Lightbox photos={hallPicsSmall} />
                     <Lightbox photos={listOfImages} />
-
                 </div>
             </MediaQuery>
             <MediaQuery minWidth={601}>

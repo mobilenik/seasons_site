@@ -31,7 +31,6 @@ class ExSum22 extends React.Component {
     componentDidMount() {
 
         const imgMap = this.importAll(require.context("../img/exsum22", false, /\.(png|jpe?g|svg)$/));
-
         for (const [key, value] of imgMap.entries()) {
             if (value.includes("[")) {
                 var size = value.substring(value.lastIndexOf("[") + 1, value.lastIndexOf(["]"]));

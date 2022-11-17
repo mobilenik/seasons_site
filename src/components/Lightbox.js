@@ -21,10 +21,10 @@ function Lightbox(pics) {
 
   const customStylesSmall = {
     content: {
-      top: '20px',
-      left: '20px',
-      right: '20px',
-      bottom: '20px',
+      top: '40px',
+      left: '10px',
+      right: '10px',
+      bottom: '40px',
       backgroundColor: 'black',
       padding: '10px'
     },
@@ -52,7 +52,7 @@ function Lightbox(pics) {
 
   return (
     <div>
-      <Gallery photos={pics.photos} onClick={openLightbox} targetRowHeight={80} />
+      <Gallery photos={pics.photos} onClick={openLightbox} targetRowHeight={150} />
       <MediaQuery minWidth={601} orientation='portrait'>
         <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStylesBig} ariaHideApp={false}>
           <div style={smallImgStyle}>
