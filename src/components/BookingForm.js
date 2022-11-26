@@ -27,8 +27,8 @@ class BookingForm extends React.Component {
             nameLast: "",
             email1: "",
             email2: "",
-            class: "am",
-            pack: "yes",
+            class: "",
+            pack: "",
             payments: "",
             comments: "",
             payment: "",
@@ -40,20 +40,34 @@ class BookingForm extends React.Component {
         }
     }
 
+    componentDidMount() {
+        let search = window.location.search
+        const success = search.split("=")[1]
+        if (success) {
+            if (success === 'true' || success === true) {
+                this.setState({
+                    open: true
+                })
+            } else if (success === 'false') {
+                this.setState({
+                    openError: true
+                })
+            }
+        }
+    }
+
     handleInputChange = (event) => {
-        this.setState({
-            [event.target.name]: event.target.value
-        })
+        this.setState({ [event.target.name]: event.target.value })
+        this.checkValid()
     }
 
     handleRadioChange = (event) => {
-        this.setState({
-            [event.target.id]: event.target.value
-        })
+        this.setState({ [event.target.id]: event.target.value })
+        this.checkValid()
     }
 
     checkValid = () => {
-        this.setState({ valid: (this.state.nameFirst !== "" && this.state.nameLast !== "" && this.state.email1 !== "" && (this.state.email1 === this.state.email2)) ? true : false })
+        this.setState({ valid: (this.state.nameFirst !== "" && this.state.nameLast !== "" && this.state.email1 !== "" && (this.state.email1 === this.state.email2) && this.state.class !== "" && this.state.pack !== "") ? true : false })
     }
 
     checkEmail = () => {
@@ -63,13 +77,15 @@ class BookingForm extends React.Component {
 
     handleClose = () => {
         this.setState({ open: false })
+        window.location.href = "/"
     }
 
     handleCloseError = () => {
         this.setState({ openError: false })
+        window.location.href = "/"
     }
 
-    getRequest = (to, subject, msg) => {
+    x_getRequest = (to, subject, msg) => {
 
         var url = 'https://www.seasonssidcup.co.uk/php/sendmail.php?subject=' + subject + '&to=' + to + '&msg=' + msg
 
@@ -112,11 +128,32 @@ class BookingForm extends React.Component {
             )
     }
 
-    sendMail = (event) => {
+    x_sendMail = (event) => {
         event.preventDefault()
         if (this.state.nameFirst !== '' && this.state.nameLast !== '' && this.state.email !== '') {
             const msg = "nameFirst=" + this.state.nameFirst + ", nameLast=" + this.state.nameLast + ", email=" + this.state.email1 + ", class=" + this.state.class + ", pack=" + this.state.pack + ", comment=" + this.state.comments
             this.getRequest('seasonssidcup@gmail.com, info@seasonssidcup.co.uk', 'New Booking', msg)
+        }
+    }
+
+    sendMail = (event) => {
+        event.preventDefault()
+        if (this.state.terms === false && this.state.nameFirst !== '' && this.state.nameLast !== '' && this.state.email1 !== '') {
+
+            var msg = 'First Name: ' + this.state.nameFirst
+            msg = msg + '\r\nLast Name: ' + this.state.nameLast
+            msg = msg + '\r\nEmail: ' + this.state.email1
+            msg = msg + '\r\nClass: ' + this.state.class
+            msg = msg + '\r\nPack: ' + this.state.pack
+            msg = msg + '\r\nComment: ' + this.state.comments
+
+            var url = '/backend/sendmail.php?subject=New Booking&to=seasonssidcup@gmail.com,info@seasonssidcup.co.uk&page=booking&msg=' + msg
+            const encoded = encodeURI(url)
+
+            window.location.replace(encoded)
+
+        } else if (this.state.terms === true) {
+            //this.togglePop();
         }
     }
 
@@ -149,24 +186,24 @@ class BookingForm extends React.Component {
                                             <p className="label">We will only use these details to manage your booking.  You can read our privacy policy <u><a href="/privacy">here</a></u>.</p>
                                         </td>
                                         <td className="column">
-                                            <label>Which session would you like to attend?</label><br />
-                                            <input type="radio" id="classAm" name="class" value="am" onChange={this.handleRadioChange} />
-                                            <label htmlFor="classAm">AM</label>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" id="classPm" name="class" value="pm" onChange={this.handleRadioChange} />
-                                            <label htmlFor="classPm">PM</label>
+                                            <label>Which session would you like to attend? *</label><br />
+                                            <div id="class" onChange={this.handleRadioChange}>
+                                                <input type="radio" id="class" name="class" value="am" />AM
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" id="class" name="class" value="pm" />PM
+                                            </div>
                                             <br />
                                             <br />
-                                            <label>Would you like an optional starter pack?</label><br />
-                                            <input type="radio" id="radioYes" name="pack" value="yes" onChange={this.handleRadioChange} />
-                                            <label htmlFor="radioYes">Yes</label>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <input type="radio" id="radioNo" name="pack" value="no" onChange={this.handleRadioChange} />
-                                            <label htmlFor="radioNo">No</label>
+                                            <label>Would you like an optional starter pack? *</label><br />
+                                            <div id="pack" onChange={this.handleRadioChange}>
+                                                <input type="radio" id="pack" name="pack" value="yes" />Yes
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" id="pack" name="pack" value="no" />No
+                                            </div>
                                             <br />
                                             <br />
                                             <label>Comments</label>
-                                            <textarea name="comments" rows="2" value={this.state.comments} onChange={this.handleInputChange} className='field'></textarea>
+                                            <textarea name="comments" rows="2" value={this.state.comments} onChange={this.handleInputChange} onFocus={this.checkValid} className='field'></textarea>
                                             <br />
                                             <br />
                                             <Text2 />

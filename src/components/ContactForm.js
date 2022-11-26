@@ -1,5 +1,6 @@
 import React from 'react';
 import EnquiryPopup from "./Popup";
+
 //import emailjs from 'emailjs-com';
 
 class ContactForm extends React.Component {
@@ -12,22 +13,42 @@ class ContactForm extends React.Component {
       phone: "",
       message: "",
       terms: false,
-      seen: false,
+      openSuccess: false,
       openError: false,
       valid: false
     }
   }
 
-  togglePop = () => {
+  componentDidMount() {
+    let search = window.location.search
+    const success = search.split("=")[1]
+    if (success) {
+      if (success === 'true' || success === true) {
+        this.setState({
+          openSuccess: true
+        })
+      } else if (success === 'false') {
+        this.setState({
+          openError: true
+        })
+      }
+    }
+  }
+
+  togglePopSuccess = () => {
     this.setState({
-      seen: !this.state.seen
+      openSuccess: !this.state.openSuccess
     })
+    window.location.href = "/contact"
+
   }
 
   togglePopError = () => {
     this.setState({
       openError: !this.state.openError
     })
+    window.location.href = "/contact"
+
   }
 
   handleInputChange = (event) => {
@@ -43,18 +64,41 @@ class ContactForm extends React.Component {
 
   sendMail = (event) => {
     event.preventDefault()
-    console.log('sending')
 
     if (this.state.terms === false && this.state.nameFirst !== '' && this.state.nameLast !== '') {
 
-      var msg = 'Name: ' + this.state.name + '\n'
-      msg = msg + 'Phone: ' + this.state.phone + '\n'
-      msg = msg + 'Email: ' + this.state.email + '\n'
-      msg = msg + 'Message: ' + this.state.message + '\n'
+      var msg = 'Name: ' + this.state.name
+      msg = msg + '\r\nPhone: ' + this.state.phone
+      msg = msg + '\r\nEmail: ' + this.state.email
+      msg = msg + '\r\nMessage: ' + this.state.message
 
-      var url = 'https://www.seasonssidcup.co.uk/php/sendmail.php?subject=New Website Enquiry&to=seasonssidcup@gmail.com, info@seasonssidcup.co.uk&msg=' + msg
+      var url = '/backend/sendmail.php?subject=New Website Enquiry&to=seasonssidcup@gmail.com,info@seasonssidcup.co.uk&page=contact&msg=' + msg
+      const encoded = encodeURI(url)
 
-      fetch(url,
+      console.log(encoded)
+      console.log('sending')
+
+      window.location.replace(encoded)
+
+    } else if (this.state.terms === true) {
+      //this.togglePop();
+    }
+  }
+
+  sendMailPHP = (event) => {
+    event.preventDefault()
+
+    if (this.state.terms === false && this.state.nameFirst !== '' && this.state.nameLast !== '') {
+
+      var msg = 'Name: ' + this.state.name
+      msg = msg + '\r\nPhone: ' + this.state.phone
+      msg = msg + '\r\nEmail: ' + this.state.email
+      msg = msg + '\r\nMessage: ' + this.state.message
+
+      var url = 'https://mobilenik.co.uk/sendmail.php?subject=New Website Enquiry&to=info@seasonssidcup.co.uk&page=contact&msg=' + msg
+      const encoded = encodeURI(url)
+
+      fetch(encoded,
         {
           'headers': {
             'Accept': 'text/html',
@@ -86,8 +130,6 @@ class ContactForm extends React.Component {
             this.setState({ openError: true })
           }
         )
-    } else if (this.state.terms === true) {
-      this.togglePop();
     }
   }
 
@@ -123,7 +165,7 @@ class ContactForm extends React.Component {
               </td></tr>
             </tbody>
           </table>
-          {this.state.seen ? <EnquiryPopup toggle={this.togglePop} msg="Thank you for your enquiry - we will contact you shortly to follow up." /> : null}
+          {this.state.openSuccess ? <EnquiryPopup toggle={this.togglePopSuccess} msg="Thank you for your enquiry - we will contact you shortly to follow up." /> : null}
           {this.state.openError ? <EnquiryPopup toggle={this.togglePopError} msg="There was a problem submitting your enquiry.  Please try again shortly or phone / email us directly." /> : null}
         </form>
       </div>

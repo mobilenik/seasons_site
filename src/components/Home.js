@@ -44,9 +44,8 @@ class Spacer extends React.Component {
 class NewClassCallout extends React.Component {
     render() {
         return (
-            <td width="250px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 10th but places are going fast!</div><br />
-                <div className="font-light font-medium">The morning session is already full but there are a few places left for the afternoon so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
-                <div className="font-small"><i>If you can't make a Tuesday still contact us as we are hoping to start a second class on another day.</i></div>
+            <td width="300px" className="callout"><div className="font-bold">Our Spring class starts on Tuesday January 10th but places are going fast!</div><br />
+                <div className="font-light font-medium">There really are only a few places left so <u><a href="/contact" alt="Contact Us">contact us</a></u> today to find out more and to book your space.</div><br />
             </td>
         );
     }
@@ -95,10 +94,17 @@ class Home extends React.Component {
             <div className="panel">
                 <MediaQuery maxWidth={600}>
                     <div className={"panel-body-mob"}>
+                        <table className="layout">
+                            <tbody>
+                                <tr>
+                                    <NewClassCallout />
+                                </tr>
+                            </tbody>
+                        </table>
                         <br />
                         <Text1 />
                         <br />
-                        <table className="video-box align-center">
+                        <table className="video-box align-center"><tbody>
                             <tr>
                                 <td className="video-caption">
                                     Don't take our word for it - listen to what our students think...
@@ -111,6 +117,7 @@ class Home extends React.Component {
                                     You can skip to 2 minutes and 50 seconds for the 'serious' review!
                                 </td>
                             </tr>
+                        </tbody>
                         </table>
                     </div>
                 </MediaQuery>
@@ -123,11 +130,11 @@ class Home extends React.Component {
                                     {/*<ExhibitionCallout />
                                     <Spacer />*/}
                                     <td><Text1 />
-                                        {/*<br />
-                                    Why not pop along on Friday to the end of term exhibition to meet the tutors and see the current students work.*/}
+                                        <br />
+                                        Why not pop along to the end of term exhibition on Friday Dec 16th at 5:30pm to meet the tutors and see the current students work.
                                     </td>
-                                    {/*<Spacer />
-                                    <NewClassCallout />*/}
+                                    <Spacer />
+                                    <NewClassCallout />
                                 </tr>
                             </tbody>
                         </table>
