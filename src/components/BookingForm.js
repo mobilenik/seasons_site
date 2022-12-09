@@ -27,6 +27,9 @@ class BookingForm extends React.Component {
             nameLast: "",
             email1: "",
             email2: "",
+            street: "",
+            town: "",
+            postcode: "",
             class: "",
             pack: "",
             payments: "",
@@ -107,6 +110,9 @@ class BookingForm extends React.Component {
                             nameLast: "",
                             email1: "",
                             email2: "",
+                            street: "",
+                            town: "",
+                            postcode: "",
                             class: "",
                             pack: "",
                             payments: "",
@@ -183,7 +189,15 @@ class BookingForm extends React.Component {
                                             <input type="email" name="email2" value={this.state.email2} onBlur={this.checkEmail} onChange={this.handleInputChange} width="100%" className={this.state.emailMatch ? "field" : "fieldError"} />
                                             <br />
                                             <br />
-                                            <p className="label">We will only use these details to manage your booking.  You can read our privacy policy <u><a href="/privacy">here</a></u>.</p>
+                                            <label>Address (house and street) *</label>
+                                            <input type="street" name="street" value={this.state.street} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" />
+                                            <br />
+                                            <br />
+                                            <label>Town *</label>
+                                            <input type="town" name="town" value={this.state.town} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" />
+                                            <br />
+                                            <br /><label>Postcode *</label>
+                                            <input type="postcode" name="postcode" value={this.state.postcode} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" />
                                         </td>
                                         <td className="column">
                                             <label>Which session would you like to attend? *</label><br />
@@ -200,11 +214,9 @@ class BookingForm extends React.Component {
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <input type="radio" id="pack" name="pack" value="no" />No
                                             </div>
-                                            <br />
-                                            <br />
+                                            <p className="label">We will only use these details to manage your booking.  You can read our privacy policy <u><a href="/privacy">here</a></u>.</p>                                            <br />
                                             <label>Comments</label>
                                             <textarea name="comments" rows="2" value={this.state.comments} onChange={this.handleInputChange} onFocus={this.checkValid} className='field'></textarea>
-                                            <br />
                                             <br />
                                             <Text2 />
                                             <input type="checkbox" id="terms" name="terms" value="false" className="terms"></input><label className="terms">Do you agree to our terms and conditions?</label>
