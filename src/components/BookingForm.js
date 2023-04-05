@@ -8,7 +8,7 @@ class Text2 extends React.Component {
                 <p>Payment can be made by bank transfer to the following account:</p>
                 <table className='bankdetails'>
                     <tbody>
-                        <tr><td className='bankDetails'>Account Name:</td><td>The Seasons Art Class Sidcup</td></tr>
+                        <tr><td className='bankDetails'>Account Name:</td><td>Seasons Art Class Sidcup</td></tr>
                         <tr><td className='bankDetails'>Sort code:</td><td>23-69-72</td></tr>
                         <tr><td className='bankDetails'>Account Number:&nbsp;</td><td>29634320</td></tr>
                     </tbody>

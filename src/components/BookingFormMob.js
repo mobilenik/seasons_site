@@ -141,7 +141,7 @@ class BookingFormMob extends React.Component {
                                         <br />
                                         <p className="label">We will only use these details to manage your booking.  You can read our privacy policy <u><a href="/privacy">here</a></u>.</p>
                                         <p>Payment can be made by bank transfer to the following account:</p>
-                                        <div className='bankDetails'>Account: The Seasons Art Class Sidcup</div>
+                                        <div className='bankDetails'>Account: Seasons Art Class Sidcup</div>
                                         <div className='bankDetails'>Sort code: 23-69-72</div>
                                         <div className='bankDetails'>Account Number: 29634320</div>
                                         <input type="checkbox" id="terms" name="terms" value="false" className="terms"></input><label className="terms">Do you agree to our terms and conditions?</label>
