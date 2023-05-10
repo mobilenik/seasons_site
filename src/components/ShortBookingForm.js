@@ -1,0 +1,261 @@
+import React from 'react'
+import BookingPopup from "./Popup";
+
+class Text2 extends React.Component {
+    render() {
+        return (
+            <div>
+                <p>Payment can be made by bank transfer to the following account:</p>
+                <table className='bankdetails'>
+                    <tbody>
+                        <tr><td className='bankDetails'>Account Name:</td><td>Seasons Art Class Sidcup</td></tr>
+                        <tr><td className='bankDetails'>Sort code:</td><td>23-69-72</td></tr>
+                        <tr><td className='bankDetails'>Account Number:&nbsp;</td><td>29634320</td></tr>
+                    </tbody>
+                </table>
+            </div >
+        );
+    }
+}
+
+class ShortBookingForm extends React.Component {
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            nameFirst: "",
+            nameLast: "",
+            email1: "",
+            email2: "",
+            street: "",
+            town: "",
+            postcode: "",
+            class_d: "",
+            class_p: "",
+            class_w: "",
+            class_a: "",
+            exhibition: "",
+            payments: "",
+            comments: "",
+            payment: "",
+            terms: false,
+            open: false,
+            openError: false,
+            valid: false,
+            emailMatch: true
+        }
+    }
+
+    componentDidMount() {
+        let search = window.location.search
+        const success = search.split("=")[1]
+        if (success) {
+            if (success === 'true' || success === true) {
+                this.setState({
+                    open: true
+                })
+            } else if (success === 'false') {
+                this.setState({
+                    openError: true
+                })
+            }
+        }
+    }
+
+    handleInputChange = (event) => {
+        this.setState({ [event.target.name]: event.target.value })
+        this.checkValid()
+    }
+
+    handleCheckChange = (event) => {
+        this.setState({ [event.target.id]: event.target.checked ? "yes" : "no" })
+        this.checkValid()
+    }
+
+    handleRadioChange = (event) => {
+        this.setState({ [event.target.id]: event.target.value })
+        this.checkValid()
+    }
+
+    handleSelectChange = (event) => {
+        this.setState({ [event.target.id]: event.target.value })
+        this.checkValid()
+    }
+
+    checkValid = () => {
+        this.setState({ valid: (this.state.nameFirst !== "" && this.state.nameLast !== "" && this.state.email1 !== "" && (this.state.email1 === this.state.email2) && this.state.class !== "" && this.state.pack !== "") ? true : false })
+    }
+
+    checkEmail = () => {
+        this.setState({ emailMatch: (this.state.email1 === "" || this.state.email2 === "" || (this.state.email1 !== "" && (this.state.email1 === this.state.email2))) ? true : false })
+        this.checkValid()
+    }
+
+    handleClose = () => {
+        this.setState({ open: false })
+        window.location.href = "/"
+    }
+
+    handleCloseError = () => {
+        this.setState({ openError: false })
+        window.location.href = "/"
+    }
+
+    x_getRequest = (to, subject, msg) => {
+
+        var url = 'https://www.seasonssidcup.co.uk/php/sendmail.php?subject=' + subject + '&to=' + to + '&msg=' + msg
+
+        fetch(url,
+            {
+                'headers': {
+                    'Accept': 'text/html',
+                    'Content-Type': 'text/html'
+                },
+                'method': 'GET',
+
+            })
+            .then(
+                (result) => {
+                    if (result.status === 200) {
+                        this.setState({ open: true })
+                        this.setState({
+                            nameFirst: "",
+                            nameLast: "",
+                            email1: "",
+                            email2: "",
+                            street: "",
+                            town: "",
+                            postcode: "",
+                            class_d: "",
+                            class_p: "",
+                            class_w: "",
+                            class_a: "",
+                            exhibition: "",
+                            payments: "",
+                            comments: "",
+                            terms: false,
+                            valid: false,
+                            emailMatch: true
+                        })
+                    } else {
+                        console.log('failed')
+                        this.setState({ openError: true })
+                    }
+                },
+                (error) => {
+                    console.log('ERROR')
+                    console.log(error)
+                    this.setState({ openError: true })
+                }
+            )
+    }
+
+    /*x_sendMail = (event) => {
+        event.preventDefault()
+        if (this.state.nameFirst !== '' && this.state.nameLast !== '' && this.state.email !== '') {
+            const msg = "nameFirst=" + this.state.nameFirst + ", nameLast=" + this.state.nameLast + ", email=" + this.state.email1 + ", class=" + this.state.class + ", comment=" + this.state.comments
+            this.getRequest('seasonssidcup@gmail.com, info@seasonssidcup.co.uk', 'New Short Course Booking', msg)
+        }
+    }*/
+
+    sendMail = (event) => {
+        event.preventDefault()
+        if (this.state.terms === false && this.state.nameFirst !== '' && this.state.nameLast !== '' && this.state.email1 !== '') {
+
+            var msg = 'First Name: ' + this.state.nameFirst
+            msg = msg + '\r\nLast Name: ' + this.state.nameLast
+            msg = msg + '\r\nEmail: ' + this.state.email1
+            msg = msg + '\r\nDrawing Class: ' + this.state.class_d
+            msg = msg + '\r\nPastel Class: ' + this.state.class_p
+            msg = msg + '\r\nWatercolour Class: ' + this.state.class_w
+            msg = msg + '\r\nAcrylic Class: ' + this.state.class_a
+            msg = msg + '\r\nExhibition: ' + this.state.exhibition
+            msg = msg + '\r\nComment: ' + this.state.comments
+
+            console.log(msg)
+            var url = '/backend/sendmail.php?subject=New Short Course Booking&to=seasonssidcup@gmail.com,info@seasonssidcup.co.uk&page=shortbooking&msg=' + msg
+            const encoded = encodeURI(url)
+
+            window.location.replace(encoded)
+
+        } else if (this.state.terms === true) {
+            //this.togglePop();
+        }
+    }
+
+    render() {
+        return (
+            <div>
+                <div className="panel">
+                    <div className="panel-body">
+                        <form className="form">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td className="column" width="50%">
+                                            <label>First Name *</label>
+                                            <input type="text" name="nameFirst" value={this.state.nameFirst} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" required />
+                                            <br />
+                                            <br />
+                                            <label>Last Name *</label>
+                                            <input type="text" name="nameLast" value={this.state.nameLast} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" required />
+                                            <br />
+                                            <br />
+                                            <label>Email Address *</label>
+                                            <input type="email" name="email1" value={this.state.email1} onBlur={this.checkEmail} onChange={this.handleInputChange} width="100%" className="field" />
+                                            <br />
+                                            <br />
+                                            <label>Confirm Email Address *</label>
+                                            <input type="email" name="email2" value={this.state.email2} onBlur={this.checkEmail} onChange={this.handleInputChange} width="100%" className={this.state.emailMatch ? "field" : "fieldError"} />
+                                            <br />
+                                            <br />
+                                            <label>Address (house and street) *</label>
+                                            <input type="street" name="street" value={this.state.street} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" />
+                                            <br />
+                                            <br />
+                                            <label>Town *</label>
+                                            <input type="town" name="town" value={this.state.town} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" />
+                                            <br />
+                                            <br /><label>Postcode *</label>
+                                            <input type="postcode" name="postcode" value={this.state.postcode} onBlur={this.checkValid} onChange={this.handleInputChange} width="100%" className="field" />
+                                        </td>
+                                        <td className="column">
+                                            <label>Which short courses would you like to attend? *</label><br />
+                                            <input type="checkbox" id="class_d" name="class_d" value="yes" onChange={this.handleCheckChange} />
+                                            <label htmlFor="drawing">Drawing</label><br />
+                                            <input type="checkbox" id="class_p" name="class_p" value="yes" onChange={this.handleCheckChange} />
+                                            <label htmlFor="pastel">Pastel</label><br />
+                                            <input type="checkbox" id="class_w" name="class_w" value="yes" onChange={this.handleCheckChange} />
+                                            <label htmlFor="watercolor">Watercolour</label><br />
+                                            <input type="checkbox" id="class_a" name="class_a" value="yes" onChange={this.handleCheckChange} />
+                                            <label htmlFor="acrylic">Arcylic</label>
+                                            <br />
+                                            <br />
+                                            <label>Would you like to mount and exhibit your work? *</label><br />
+                                            <div id="exhibition" onChange={this.handleRadioChange}>
+                                                <input type="radio" id="exhibition" name="exhibition" value="Yes" />Yes
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="radio" id="exhibition" name="exhibition" value="No" />No
+                                            </div>
+                                            <br />
+                                            <label>Comments</label>
+                                            <textarea name="comments" rows="2" value={this.state.comments} onChange={this.handleInputChange} onFocus={this.checkValid} className='field'></textarea>
+                                            <p className="label">We will only use these details to manage your booking.  You can read our privacy policy <u><a href="/privacy">here</a></u>.</p>
+                                            <Text2 />
+                                            <input type="checkbox" id="terms" name="terms" value="false" className="terms"></input><label className="terms">Do you agree to our terms and conditions?</label>
+                                            <input type="submit" value="Submit" className="button" onClick={this.sendMail} disabled={!this.state.valid} />
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            {this.state.open ? <BookingPopup toggle={this.handleClose} msg="Thank you for your booking.  It will be confirmed once payment of the initial installment is received." /> : null}
+                            {this.state.openError ? <BookingPopup toggle={this.handleCloseError} msg="There was a problem submitting your booking request.  Please try again shortly." /> : null}
+                        </form>
+                    </div >
+                </div>
+            </div>
+        )
+    }
+}
+
+export default ShortBookingForm

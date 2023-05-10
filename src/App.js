@@ -11,6 +11,7 @@ import Home from './components/Home.js'
 import ExSum21 from './components/ExSum21'
 import ExAut21 from './components/ExAut21'
 import Booking from './components/Booking'
+import ShortBooking from './components/ShortBooking'
 import ExSpr22 from './components/ExSpr22'
 import ExSum22 from './components/ExSum22'
 import MediaQuery from 'react-responsive'
@@ -101,6 +102,7 @@ function App() {
         <Route path="/exspr22" component={ExSpr22} />
         <Route path="/exsum22" component={ExSum22} />
         <Route path="/booking" component={Booking} />
+        <Route path="/shortbooking" component={ShortBooking} />
 
       </Router>
     </div>
