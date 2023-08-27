@@ -52,7 +52,7 @@ function Lightbox(pics) {
 
   return (
     <div>
-      <Gallery photos={pics.photos} onClick={openLightbox} targetRowHeight={250} />
+      <Gallery photos={pics.photos} onClick={openLightbox} targetRowHeight={200} />
       <MediaQuery minWidth={601} orientation='portrait'>
         <Modal isOpen={viewerIsOpen} onRequestClose={closeLightbox} style={customStylesBig} ariaHideApp={false}>
           <div style={smallImgStyle}>

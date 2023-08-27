@@ -16,6 +16,7 @@ import ExSpr22 from './components/ExSpr22'
 import ExSum22 from './components/ExSum22'
 import ExAut22 from './components/ExAut22'
 import ExSpr23 from './components/ExSpr23'
+import ExSum23 from './components/ExSum23'
 import MediaQuery from 'react-responsive'
 import { HiOutlineMail, HiPhone } from 'react-icons/hi'
 import { IoLogoFacebook } from 'react-icons/io'
@@ -39,6 +40,7 @@ function App() {
             <a id="sum22" className="menu-item-small" href="/exsum22">Summer 2022</a>
             <a id="aut22" className="menu-item-small" href="/exaut22">Autumn 2022</a>
             <a id="spr23" className="menu-item-small" href="/exspr23">Spring 2023</a>
+            <a id="sum23" className="menu-item-small" href="/exsum23">Summer 2023</a>
             <div id="info" className="menu-group">Extra Info</div>
             <a id="contact" className="menu-item-small" href="/contact">Contact Us</a>
             <a id="privacy" className="menu-item-small" href="/privacy">Privacy Statement</a>
@@ -57,6 +59,7 @@ function App() {
             <a id="sum22" className="menu-item-small-mob" href="/exsum22">Summer 22</a>
             <a id="aut22" className="menu-item-small-mob" href="/exaut22">Autumn 22</a>
             <a id="spr23" className="menu-item-small-mob" href="/exspr23">Spring 2023</a>
+            <a id="sum23" className="menu-item-small-mob" href="/exsum23">Summer 2023</a>
             <div id="info" className="menu-group-mob">Extra Info</div>
             <a id="contact" className="menu-item-small-mob" href="/contact">Contact Us</a>
             <a id="privacy" className="menu-item-small-mob" href="/privacy">Privacy Statement</a>
@@ -109,6 +112,7 @@ function App() {
         <Route path="/exsum22" component={ExSum22} />
         <Route path="/exaut22" component={ExAut22} />
         <Route path="/exspr23" component={ExSpr23} />
+        <Route path="/exsum23" component={ExSum23} />
         <Route path="/booking" component={Booking} />
         <Route path="/shortbooking" component={ShortBooking} />
 
