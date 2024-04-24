@@ -1,16 +1,16 @@
 import React from 'react'
 import BookingPopup from "./Popup";
 
-class Text2 extends React.Component {
+class TextBankDetails extends React.Component {
     render() {
         return (
             <div>
                 <p>Payment can be made by bank transfer to the following account:</p>
                 <table className='bankdetails'>
                     <tbody>
-                        <tr><td className='bankDetails'>Account Name:</td><td>Seasons Art Class Sidcup</td></tr>
-                        <tr><td className='bankDetails'>Sort code:</td><td>23-69-72</td></tr>
-                        <tr><td className='bankDetails'>Account Number:&nbsp;</td><td>29634320</td></tr>
+                        <tr><td className='bankDetails'>Account Name: </td><td>Seasons Art Class Sidcup</td></tr>
+                        <tr><td className='bankDetails'>Sort code: </td><td>04-03-33</td></tr>
+                        <tr><td className='bankDetails'>Account Number: </td><td>46089011</td></tr>
                     </tbody>
                 </table>
             </div >
@@ -86,60 +86,6 @@ class BookingForm extends React.Component {
     handleCloseError = () => {
         this.setState({ openError: false })
         window.location.href = "/"
-    }
-
-    x_getRequest = (to, subject, msg) => {
-
-        var url = 'https://www.seasonssidcup.co.uk/php/sendmail.php?subject=' + subject + '&to=' + to + '&msg=' + msg
-
-        fetch(url,
-            {
-                'headers': {
-                    'Accept': 'text/html',
-                    'Content-Type': 'text/html'
-                },
-                'method': 'GET',
-
-            })
-            .then(
-                (result) => {
-                    if (result.status === 200) {
-                        this.setState({ open: true })
-                        this.setState({
-                            nameFirst: "",
-                            nameLast: "",
-                            email1: "",
-                            email2: "",
-                            street: "",
-                            town: "",
-                            postcode: "",
-                            class: "",
-                            pack: "",
-                            payments: "",
-                            comments: "",
-                            terms: false,
-                            valid: false,
-                            emailMatch: true
-                        })
-                    } else {
-                        console.log('failed')
-                        this.setState({ openError: true })
-                    }
-                },
-                (error) => {
-                    console.log('ERROR')
-                    console.log(error)
-                    this.setState({ openError: true })
-                }
-            )
-    }
-
-    x_sendMail = (event) => {
-        event.preventDefault()
-        if (this.state.nameFirst !== '' && this.state.nameLast !== '' && this.state.email !== '') {
-            const msg = "nameFirst=" + this.state.nameFirst + ", nameLast=" + this.state.nameLast + ", email=" + this.state.email1 + ", class=" + this.state.class + ", pack=" + this.state.pack + ", comment=" + this.state.comments
-            this.getRequest('seasonssidcup@gmail.com, info@seasonssidcup.co.uk', 'New Booking', msg)
-        }
     }
 
     sendMail = (event) => {
@@ -218,7 +164,7 @@ class BookingForm extends React.Component {
                                             <label>Comments</label>
                                             <textarea name="comments" rows="2" value={this.state.comments} onChange={this.handleInputChange} onFocus={this.checkValid} className='field'></textarea>
                                             <br />
-                                            <Text2 />
+                                            <TextBankDetails />
                                             <input type="checkbox" id="terms" name="terms" value="false" className="terms"></input><label className="terms">Do you agree to our terms and conditions?</label>
                                             <input type="submit" value="Submit" className="button" onClick={this.sendMail} disabled={!this.state.valid} />
                                         </td>

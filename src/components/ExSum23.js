@@ -16,7 +16,7 @@ class Text1 extends React.Component {
     }
 }
 
-class ExSpr23 extends React.Component {
+class ExSum23 extends React.Component {
 
 
     importAll(r) {
@@ -63,4 +63,4 @@ class ExSpr23 extends React.Component {
     }
 }
 
-export default ExSpr23;
+export default ExSum23;

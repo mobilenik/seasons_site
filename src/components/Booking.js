@@ -3,12 +3,22 @@ import MediaQuery from 'react-responsive'
 import BookingForm from './BookingForm'
 import BookingFormMob from './BookingFormMob'
 
-class Text1 extends React.Component {
+class TextIntro extends React.Component {
     render() {
         return (
             <div>
                 <p>If you would like to secure a place for the next course then please fill out the form below and pay the initial installment of £125 by bank transfer.</p>
             </div>
+        );
+    }
+}
+
+class TextDisclaimer extends React.Component {
+    render() {
+        return (
+            <div>
+                <p>Our cancellation policy allows you to receive a full refund if cancelling within 14 days of booking.</p>
+            </div >
         );
     }
 }
@@ -22,13 +32,13 @@ class Booking extends React.Component {
                 <MediaQuery maxWidth={600}>
                     <div className="panel-header-mob">Booking</div>
                     <div className="panel-body-mob">
-                        <Text1 />
+                        <TextIntro />
                     </div>
                 </MediaQuery>
                 <MediaQuery minWidth={601}>
                     <div className="panel-header">Booking</div>
                     <div className="panel-body">
-                        <Text1 />
+                        <TextIntro />
                     </div>
                 </MediaQuery>
 
@@ -38,6 +48,10 @@ class Booking extends React.Component {
                 <MediaQuery minWidth={601}>
                     <BookingForm />
                 </MediaQuery>
+
+                <div className="panel-body-mob">
+                    <TextDisclaimer />
+                </div>
             </div>
         )
     }
