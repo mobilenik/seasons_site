@@ -1,5 +1,5 @@
 import React from 'react';
-import ParkingMap from '../img/parking.png'
+import ParkingMap from '../img/parking2.png'
 import MediaQuery from 'react-responsive'
 
 class Text1 extends React.Component {
@@ -16,7 +16,7 @@ class Text2 extends React.Component {
     render() {
         return (
             <div>
-                <p>There is some unrestricted on-street parking in Rowanwood Avenue and outside Rose Bruford College where you can park at any time, and controlled parking in Burnt Oak Lane and Malborough Park Avenue where you can park in the mornings. There is also paid parking in the Leisure Center off Hurst Road, and you can quickly walk through the Glades to Burnt Oak Lane.</p>
+                <p>There is some unrestricted on-street parking in Rowanwood Avenue and outside Rose Bruford College where you can park at any time, and controlled parking in Malborough Park Avenue where you can park in the mornings. There is also paid parking in the Leisure Center off Hurst Road, and you can quickly walk through the Glades to Burnt Oak Lane.</p>
             </div>
         );
     }

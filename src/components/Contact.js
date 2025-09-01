@@ -41,7 +41,7 @@ class Contact extends React.Component {
                         <Text1 />
                     </div>
                 </MediaQuery>
-                <div className="container"><div className="container-cell"><HiPhone className="contact-phone-icon" /></div><div className="container-cell"><div className="contact-phone">&nbsp;0208 252 2310</div></div></div>
+                <div className="container"><div className="container-cell"><HiPhone className="contact-phone-icon" /></div><div className="container-cell"><div className="contact-phone">&nbsp;0208 637 3829</div></div></div>
                 <div className="container"><div className="container-cell"><a href="mailto:seasonssidcup@gmail?subject=Class Enquiry"><HiOutlineMail className="contact-phone-icon" /></a></div><div className="container-cell"><div className="contact-email">&nbsp;<a href="mailto:seasonssidcup@gmail?subject=Class Enquiry">Mail seasonssidcup@gmail.com</a></div></div></div>
                 <div className="container"><div className="container-cell"><a href="https://www.facebook.com/seasonssidcup/"><IoLogoFacebook className="contact-phone-icon" /></a></div><div className="container-cell"><div className="contact-email">&nbsp;<a href="http://www.facebook.com/seasonssidcup/" target="_blank" rel="noreferrer noopener">Click for Facebook page</a></div></div></div>
                 <MediaQuery maxWidth={600}>

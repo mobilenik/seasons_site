@@ -64,11 +64,12 @@ class NewClassCallout extends React.Component {
     return (
       <td width="300px" className="callout">
         <div className="font-bold">
-          Our Spring class starts on Tuesday January 14th
+          Our evening Autumn class starts on Monday September 8th, and the daytime class starts on Tuesday September 9th.
         </div>
         <br />
         <div className="font-light font-medium">
-          Which means that you have plenty of time to secure a place, although they are going fast.&nbsp;
+          Places are almost gone, so get in touch today if you would like a place!&nbsp;
+          {/* Which means that you have plenty of time to secure a place, although they are going fast.&nbsp; */}
           <u>
             <a href="/contact" alt="Contact Us">
               contact us
@@ -134,7 +135,7 @@ class Home extends React.Component {
               <table className="layout">
                 <tbody>
                   <tr>
-                    {/* <NewClassCallout /> */}
+                    <NewClassCallout />
                   </tr>
                 </tbody>
               </table>
@@ -177,7 +178,7 @@ class Home extends React.Component {
                     <Spacer />
                     <Text1 />
                     <Spacer />
-                    {/* <NewClassCallout /> */}
+                    <NewClassCallout />
                   </tr>
                 </tbody>
               </table>
